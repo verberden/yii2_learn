@@ -9,6 +9,12 @@
 return [
     'id' => 'crmapp',
     'basePath' => realpath(__DIR__ . '/../'),
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['*']
+        ]
+    ],
     'components' => [
         'request' => [
             'cookieValidationKey' => 'your secret key here',
@@ -18,4 +24,5 @@ return [
             'showScriptName' => false
         ],
         'db' => require(__DIR__ . '/db.php'),
-    ],];
+    ],
+    'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php')];
