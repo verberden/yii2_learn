@@ -13,7 +13,7 @@ class CRMUserSteps extends \AcceptanceTester
 		{
 			$I = $this;
 			$I->fillField(
-			'PhoneRecord[number]',
+			'phone_number',
 			$customer_data['PhoneRecord[number]']
 			);
 		}
@@ -33,12 +33,12 @@ class CRMUserSteps extends \AcceptanceTester
 	function seeCustomerInList($customer_data)
 		{
 			$I = $this;
-			$I->see($customer_data['CustomerRecord[name]'], '#search_results');
+			$I->see($customer_data['CustomerRecord[name]']);
 		}
 
 	function dontSeeCustomerInList($customer_data)
 		{
 			$I = $this;
-			$I->dontSee($customer_data['CustomerRecord[name]'], '#search_results');
+			$I->dontSee($customer_data['CustomerRecord[name]']);
 		}
 }
