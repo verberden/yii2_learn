@@ -8,6 +8,7 @@
 
 return [
     'id' => 'crmapp',
+    'language'=>'ru-RU',
     'basePath' => realpath(__DIR__ . '/../'),
     'modules' => [
         'gii' => [
@@ -24,5 +25,19 @@ return [
             'showScriptName' => false
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'view' => [
+            'renderers' => [
+                'md' => [
+                    'class' => 'app\utilities\MarkdownRenderer'
+                ]
+            ]
+        ],
+        'response' => [
+            'formatters' => [
+                'yaml' => [
+                    'class' => 'app\utilities\YamlResponseFormatter'
+                ]
+            ]
+        ],
     ],
     'extensions' => require(__DIR__ . '/../vendor/yiisoft/extensions.php')];
